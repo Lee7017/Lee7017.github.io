@@ -19,23 +19,88 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
 
-    <meta property="og:type" content="website">
+    <meta name="description" content="1234title: &quot;神经网络基础&quot;  # 文章标题categories: 技术分享  # 文章分类tags:   - 深度学习  神经网络基础神经网络深度学习神经网络就是大脑仿生，数据从输入到输出经过一层一层的神经元产生预测值的过程就是&#x3D;&#x3D;前向传播（也叫正向传播）&#x3D;&#x3D;。 前向传播涉及到人工神经元是如何工作的（也就是神经元的初始化、激活">
+<meta property="og:type" content="article">
 <meta property="og:title" content="你好，欢迎来到李响的博客">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="你好，欢迎来到李响的博客">
+<meta property="og:description" content="1234title: &quot;神经网络基础&quot;  # 文章标题categories: 技术分享  # 文章分类tags:   - 深度学习  神经网络基础神经网络深度学习神经网络就是大脑仿生，数据从输入到输出经过一层一层的神经元产生预测值的过程就是&#x3D;&#x3D;前向传播（也叫正向传播）&#x3D;&#x3D;。 前向传播涉及到人工神经元是如何工作的（也就是神经元的初始化、激活">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/05.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/08.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/07.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/image-20220313130303542.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/09.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/10.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/11.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/21.png">
+<meta property="og:image" content="http://example.com/assets/1663472645904.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/25.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/23.png">
+<meta property="og:image" content="http://example.com/assets/1663472675509.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/24.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/26.png">
+<meta property="og:image" content="http://example.com/assets/1663472703595.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/1734057447434.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/29.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/30.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/31.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/image-20220313133601678.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/image-20220313141138281.png">
+<meta property="og:image" content="http://example.com/assets/03-1.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/03-2.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/03-3.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/03-4.png">
+<meta property="og:image" content="http://example.com/assets/03-5.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/03-6.png">
+<meta property="og:image" content="http://example.com/assets/03-7.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/1735117379356.png">
+<meta property="og:image" content="http://example.com/assets/03-8.png">
+<meta property="og:image" content="http://example.com/assets/03-9.png">
+<meta property="og:image" content="http://example.com/assets/03-10.png">
+<meta property="og:image" content="http://example.com/assets/03-11.png">
+<meta property="og:image" content="http://example.com/assets/03-12.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/03-13.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/12.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/04-05.png">
+<meta property="og:image" content="g:/BaiduNetdiskDownload/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%B2%E4%B9%89/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80html/02-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/13.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/14.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/image-20210129103846076.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/image-20210129104612230.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/image-20210129104646474.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/image-20210129104718140.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/image-20210129104756053.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/50.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/37.png">
+<meta property="og:image" content="http://example.com/assets/1735177998337.png">
+<meta property="og:image" content="http://example.com/assets/1734144867552.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/42.png">
+<meta property="og:image" content="http://example.com/assets/04-01.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/04-02.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/04-03.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/04-04.png">
+<meta property="og:image" content="http://example.com/assets/05-01.png">
+<meta property="og:image" content="http://example.com/assets/image-20220517141847967.png">
+<meta property="og:image" content="http://example.com/assets/image-20220517143935599.png">
+<meta property="og:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/48.png">
+<meta property="og:image" content="http://example.com/assets/1734255905857.png">
+<meta property="og:image" content="http://example.com/assets/1734256199295.png">
+<meta property="og:image" content="http://example.com/assets/1734256384162.png">
+<meta property="article:published_time" content="2025-05-14T06:58:17.130Z">
+<meta property="article:modified_time" content="2025-05-14T06:59:29.247Z">
 <meta property="article:author" content="李响">
 <meta property="article:tag" content="技术,博客,编程,生活">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/assets/05.png">
 
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/","path":"2025/05/14/神经网络基础/","title":""}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>你好，欢迎来到李响的博客</title>
+<title> | 你好，欢迎来到李响的博客</title>
   
 
 
@@ -85,7 +150,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">你好，欢迎来到李响的博客</h1>
+      <p class="site-title">你好，欢迎来到李响的博客</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -111,7 +176,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -124,6 +189,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">神经网络基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="nav-number">1.1.</span> <span class="nav-text">神经网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.1.</span> <span class="nav-text">神经网络概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">什么是神经网络</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">如何构建神经网络</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%86%85%E9%83%A8%E7%8A%B6%E6%80%81%E5%80%BC%E5%92%8C%E6%BF%80%E6%B4%BB%E5%80%BC"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">神经网络内部状态值和激活值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.2.</span> <span class="nav-text">激活函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%A0%E7%B4%A0%E7%90%86%E8%A7%A3"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">网络非线性因素理解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">常见激活函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Sigmoid-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.2.2.1.</span> <span class="nav-text">Sigmoid 激活函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Tanh-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.2.2.2.</span> <span class="nav-text">Tanh 激活函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ReLU-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.2.2.3.</span> <span class="nav-text">ReLU 激活函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SoftMax%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.2.2.4.</span> <span class="nav-text">SoftMax激活函数</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">如何选择激活函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.1.3.</span> <span class="nav-text">参数初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E5%8F%82%E6%95%B0%E5%88%9D%E5%A7%8B%E5%8C%96%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">常见参数初始化方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E5%8F%82%E6%95%B0%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">如何选择参数初始化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%90%AD%E5%BB%BA%E5%92%8C%E5%8F%82%E6%95%B0%E8%AE%A1%E7%AE%97"><span class="nav-number">1.1.4.</span> <span class="nav-text">神经网络搭建和参数计算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">构建神经网络</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%82%E5%AF%9F%E6%95%B0%E6%8D%AE%E5%BD%A2%E7%8A%B6%E5%8F%98%E5%8C%96"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">观察数据形状变化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E5%8F%82%E6%95%B0%E8%AE%A1%E7%AE%97"><span class="nav-number">1.1.4.3.</span> <span class="nav-text">模型参数计算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%A8%A1%E5%9E%8B%E5%8F%82%E6%95%B0"><span class="nav-number">1.1.4.4.</span> <span class="nav-text">查看模型参数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="nav-number">1.2.</span> <span class="nav-text">损失函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E6%A6%82%E5%BF%B5"><span class="nav-number">1.2.1.</span> <span class="nav-text">损失函数概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E7%B1%BB%E4%BB%BB%E5%8A%A1%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="nav-number">1.2.2.</span> <span class="nav-text">分类任务损失函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E5%88%86%E7%B1%BB%E4%BB%BB%E5%8A%A1%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">多分类任务损失函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E7%B1%BB%E4%BB%BB%E5%8A%A1%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">二分类任务损失函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E5%BD%92%E4%BB%BB%E5%8A%A1%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="nav-number">1.2.3.</span> <span class="nav-text">回归任务损失函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MAE%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">MAE损失函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MSE%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">MSE损失函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Smooth-L1%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">Smooth L1损失函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.</span> <span class="nav-text">神经网络优化方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95%E5%9B%9E%E9%A1%BE"><span class="nav-number">1.3.1.</span> <span class="nav-text">梯度下降算法回顾</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%EF%BC%88BP%E7%AE%97%E6%B3%95%EF%BC%89"><span class="nav-number">1.3.2.</span> <span class="nav-text">反向传播（BP算法）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E6%A6%82%E5%BF%B5"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">反向传播概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E8%AF%A6%E8%A7%A3"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">反向传播详解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.3.</span> <span class="nav-text">梯度下降优化方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%87%E6%95%B0%E5%8A%A0%E6%9D%83%E5%B9%B3%E5%9D%87"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">指数加权平均</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A8%E9%87%8F%E7%AE%97%E6%B3%95Momentum"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">动量算法Momentum</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AdaGrad"><span class="nav-number">1.3.3.3.</span> <span class="nav-text">AdaGrad</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RMSProp"><span class="nav-number">1.3.3.4.</span> <span class="nav-text">RMSProp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Adam"><span class="nav-number">1.3.3.5.</span> <span class="nav-text">Adam</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-number">1.3.3.6.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E7%8E%87%E8%A1%B0%E5%87%8F%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95"><span class="nav-number">1.4.</span> <span class="nav-text">学习率衰减优化方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E8%BF%9B%E8%A1%8C%E5%AD%A6%E4%B9%A0%E7%8E%87%E4%BC%98%E5%8C%96"><span class="nav-number">1.4.1.</span> <span class="nav-text">为什么要进行学习率优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%89%E9%97%B4%E9%9A%94%E5%AD%A6%E4%B9%A0%E7%8E%87%E8%A1%B0%E5%87%8F"><span class="nav-number">1.4.2.</span> <span class="nav-text">等间隔学习率衰减</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E5%AE%9A%E9%97%B4%E9%9A%94%E5%AD%A6%E4%B9%A0%E7%8E%87%E8%A1%B0%E5%87%8F"><span class="nav-number">1.4.3.</span> <span class="nav-text">指定间隔学习率衰减</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%89%E6%8C%87%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%8E%87%E8%A1%B0%E5%87%8F"><span class="nav-number">1.4.4.</span> <span class="nav-text">按指数学习率衰减</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93-1"><span class="nav-number">1.4.5.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E5%8C%96%E6%96%B9%E6%B3%95"><span class="nav-number">1.5.</span> <span class="nav-text">正则化方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%AD%A3%E5%88%99%E5%8C%96"><span class="nav-number">1.5.1.</span> <span class="nav-text">什么是正则化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dropout%E6%AD%A3%E5%88%99%E5%8C%96"><span class="nav-number">1.5.2.</span> <span class="nav-text">Dropout正则化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%B9%E9%87%8F%E5%BD%92%E4%B8%80%E6%AD%A3%E5%88%99%E5%8C%96-Batch-Normalization"><span class="nav-number">1.5.3.</span> <span class="nav-text">批量归一正则化(Batch Normalization)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%8B%E6%9C%BA%E4%BB%B7%E6%A0%BC%E5%88%86%E7%B1%BB%E6%A1%88%E4%BE%8B"><span class="nav-number">1.6.</span> <span class="nav-text">手机价格分类案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="nav-number">1.6.1.</span> <span class="nav-text">案例需求分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-number">1.6.2.</span> <span class="nav-text">构建数据集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E5%88%86%E7%B1%BB%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.6.3.</span> <span class="nav-text">构建分类网络模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83"><span class="nav-number">1.6.4.</span> <span class="nav-text">模型训练</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0"><span class="nav-number">1.6.5.</span> <span class="nav-text">模型评估</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="nav-number">1.6.6.</span> <span class="nav-text">网络性能优化</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -163,16 +229,17 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -186,13 +253,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 你好，欢迎来到李响的博客">
+      <meta itemprop="name" content=" | 你好，欢迎来到李响的博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -215,8 +282,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-          <figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: &quot;神经网络基础&quot;  # 文章标题</span><br><span class="line">categories: 技术分享  # 文章分类</span><br><span class="line"><span class="keyword">tags:</span> </span><br><span class="line">  - 深度学习</span><br></pre></td></tr></table></figure>
+    <div class="post-body" itemprop="articleBody"><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: &quot;神经网络基础&quot;  # 文章标题</span><br><span class="line">categories: 技术分享  # 文章分类</span><br><span class="line"><span class="keyword">tags:</span> </span><br><span class="line">  - 深度学习</span><br></pre></td></tr></table></figure>
 
 <h1 id="神经网络基础"><a href="#神经网络基础" class="headerlink" title="神经网络基础"></a>神经网络基础</h1><h2 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h2><p>深度学习神经网络就是大脑仿生，数据从输入到输出经过一层一层的神经元产生预测值的过程就是&#x3D;&#x3D;前向传播（也叫正向传播）&#x3D;&#x3D;。</p>
 <p>前向传播涉及到人工神经元是如何工作的（也就是神经元的初始化、激活函数），神经网络如何搭建，权重参数计算、数据形如何状变化。千里之行始于足下，我们一起进入深度学习的知识海洋吧。</p>
@@ -1138,7 +1204,6 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="keyword">from</span> torch.utils.data <span class="keyword">import</span> TensorDataset</span><br><span class="line"><span class="keyword">from</span> torch.utils.data <span class="keyword">import</span> DataLoader</span><br><span class="line"><span class="keyword">import</span> torch.optim <span class="keyword">as</span> optim</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建数据集</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">create_dataset</span>():</span><br><span class="line">	<span class="comment"># 使用pandas读取数据</span></span><br><span class="line">	data = pd.read_csv(<span class="string">&#x27;./data/手机价格预测.csv&#x27;</span>)</span><br><span class="line">	<span class="comment"># 特征值和目标值</span></span><br><span class="line">	x, y = data.iloc[:, :-<span class="number">1</span>], data.iloc[:, -<span class="number">1</span>]</span><br><span class="line">	<span class="comment"># 类型转换：特征值，目标值</span></span><br><span class="line">	x = x.astype(np.float32)</span><br><span class="line">	y = y.astype(np.int64)</span><br><span class="line">	<span class="comment"># 数据集划分</span></span><br><span class="line">	x_train, x_valid, y_train, y_valid = train_test_split(x, y, train_size=<span class="number">0.8</span>, random_state=<span class="number">88</span>, stratify=y)</span><br><span class="line">	<span class="comment"># 优化①:数据标准化</span></span><br><span class="line">	transfer = StandardScaler()</span><br><span class="line">	x_train = transfer.fit_transform(x_train)</span><br><span class="line">	x_valid = transfer.transform(x_valid)</span><br><span class="line">	<span class="comment"># 构建数据集,转换为pytorch的形式</span></span><br><span class="line">	train_dataset = TensorDataset(torch.from_numpy(x_train), torch.tensor(y_train.values))</span><br><span class="line">	valid_dataset = TensorDataset(torch.from_numpy(x_valid), torch.tensor(y_valid.values))</span><br><span class="line">	<span class="comment"># 返回结果</span></span><br><span class="line">	<span class="keyword">return</span> train_dataset, valid_dataset, x_train.shape[<span class="number">1</span>], <span class="built_in">len</span>(np.unique(y))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建网络模型</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">PhonePriceModel</span>(nn.Module):</span><br><span class="line"></span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, input_dim, output_dim</span>):</span><br><span class="line">		<span class="built_in">super</span>(PhonePriceModel, <span class="variable language_">self</span>).__init__()</span><br><span class="line">		<span class="comment"># 优化②:增加网络深度</span></span><br><span class="line">		<span class="comment"># 1. 第一层: 输入为维度为 20, 输出维度为: 128</span></span><br><span class="line">		<span class="variable language_">self</span>.linear1 = nn.Linear(input_dim, <span class="number">128</span>)</span><br><span class="line">		<span class="comment"># 2. 第二层: 输入为维度为 128, 输出维度为: 256</span></span><br><span class="line">		<span class="variable language_">self</span>.linear2 = nn.Linear(<span class="number">128</span>, <span class="number">256</span>)</span><br><span class="line">		<span class="comment"># 3. 第三层: 输入为维度为 256, 输出维度为: 512</span></span><br><span class="line">		<span class="variable language_">self</span>.linear3 = nn.Linear(<span class="number">256</span>, <span class="number">512</span>)</span><br><span class="line">		<span class="comment"># 4. 第三层: 输入为维度为 512, 输出维度为: 128</span></span><br><span class="line">		<span class="variable language_">self</span>.linear4 = nn.Linear(<span class="number">512</span>, <span class="number">128</span>)</span><br><span class="line">		<span class="comment"># 5. 第三层: 输入为维度为 128, 输出维度为: 4</span></span><br><span class="line">		<span class="variable language_">self</span>.linear5 = nn.Linear(<span class="number">128</span>, output_dim)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">		<span class="comment"># 前向传播过程</span></span><br><span class="line">		x = torch.relu(<span class="variable language_">self</span>.linear1(x))</span><br><span class="line">		x = torch.relu(<span class="variable language_">self</span>.linear2(x))</span><br><span class="line">		x = torch.relu(<span class="variable language_">self</span>.linear3(x))</span><br><span class="line">		x = torch.relu(<span class="variable language_">self</span>.linear4(x))</span><br><span class="line">		<span class="comment"># 后续CrossEntropyLoss损失函数中包含softmax过程, 所以当前步骤不进行softmax操作</span></span><br><span class="line">		output = <span class="variable language_">self</span>.linear5(x)</span><br><span class="line">		<span class="comment"># 获取数据结果</span></span><br><span class="line">		<span class="keyword">return</span> output</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 编写训练函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">train</span>(<span class="params">train_dataset, input_dim, class_num</span>):</span><br><span class="line">	<span class="comment"># 固定随机数种子</span></span><br><span class="line">	torch.manual_seed(<span class="number">0</span>)</span><br><span class="line">	<span class="comment"># 初始化数据加载器</span></span><br><span class="line">	dataloader = DataLoader(train_dataset, shuffle=<span class="literal">True</span>, batch_size=<span class="number">8</span>)</span><br><span class="line">	<span class="comment"># 初始化模型</span></span><br><span class="line">	model = PhonePriceModel(input_dim, class_num)</span><br><span class="line">	<span class="comment"># 损失函数 CrossEntropyLoss = softmax + 损失计算</span></span><br><span class="line">	criterion = nn.CrossEntropyLoss()</span><br><span class="line">	<span class="comment"># 优化③:使用Adam优化方法, 优化④:学习率变为1e-4</span></span><br><span class="line">	optimizer = optim.Adam(model.parameters(), lr=<span class="number">1e-4</span>)</span><br><span class="line">	<span class="comment"># 遍历每个轮次的数据</span></span><br><span class="line">	num_epoch = <span class="number">50</span></span><br><span class="line">	<span class="keyword">for</span> epoch_idx <span class="keyword">in</span> <span class="built_in">range</span>(num_epoch):</span><br><span class="line">		<span class="comment"># 训练时间</span></span><br><span class="line">		start = time.time()</span><br><span class="line">		<span class="comment"># 计算损失</span></span><br><span class="line">		total_loss = <span class="number">0.0</span></span><br><span class="line">		total_num = <span class="number">0</span></span><br><span class="line">		<span class="comment"># 遍历每个batch数据进行处理</span></span><br><span class="line">		<span class="keyword">for</span> x, y <span class="keyword">in</span> dataloader:</span><br><span class="line">			model.train()</span><br><span class="line">			output = model(x)</span><br><span class="line">			<span class="comment"># 计算损失</span></span><br><span class="line">			loss = criterion(output, y)</span><br><span class="line">			<span class="comment"># 梯度清零</span></span><br><span class="line">			optimizer.zero_grad()</span><br><span class="line">			<span class="comment"># 反向传播</span></span><br><span class="line">			loss.backward()</span><br><span class="line">			<span class="comment"># 参数更新</span></span><br><span class="line">			optimizer.step()</span><br><span class="line">			<span class="comment"># 损失计算</span></span><br><span class="line">			total_num += <span class="built_in">len</span>(y)</span><br><span class="line">			total_loss += loss.item() * <span class="built_in">len</span>(y)</span><br><span class="line">		<span class="comment"># 打印损失变换结果</span></span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&#x27;epoch: %4s loss: %.2f, time: %.2fs&#x27;</span> %</span><br><span class="line">			  (epoch_idx + <span class="number">1</span>, total_loss / total_num, time.time() - start))</span><br><span class="line">	<span class="comment"># 模型保存</span></span><br><span class="line">	torch.save(model.state_dict(), <span class="string">&#x27;./model/phone-price-model2.pth&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">test</span>(<span class="params">valid_dataset, input_dim, class_num</span>):</span><br><span class="line">	<span class="comment"># 加载模型和训练好的网络参数</span></span><br><span class="line">	model = PhonePriceModel(input_dim, class_num)</span><br><span class="line">	<span class="comment"># load_state_dict:将加载的参数字典应用到模型上</span></span><br><span class="line">	<span class="comment"># load:加载用来保存模型参数的文件</span></span><br><span class="line">	model.load_state_dict(torch.load(<span class="string">&#x27;./model/phone-price-model2.pth&#x27;</span>))</span><br><span class="line">	<span class="comment"># 构建加载器</span></span><br><span class="line">	dataloader = DataLoader(valid_dataset, batch_size=<span class="number">8</span>, shuffle=<span class="literal">False</span>)</span><br><span class="line">	<span class="comment"># 评估测试集</span></span><br><span class="line">	correct = <span class="number">0</span></span><br><span class="line">	<span class="comment"># 遍历测试集中的数据</span></span><br><span class="line">	<span class="keyword">for</span> x, y <span class="keyword">in</span> dataloader:</span><br><span class="line">		<span class="comment"># 将其送入网络中</span></span><br><span class="line">		<span class="comment"># model.eval()</span></span><br><span class="line">		output = model(x)</span><br><span class="line">		<span class="comment"># 获取预测类别结果</span></span><br><span class="line">		y_pred = torch.argmax(output, dim=<span class="number">1</span>)</span><br><span class="line">		<span class="comment"># 获取预测正确的个数</span></span><br><span class="line">		correct += (y_pred == y).<span class="built_in">sum</span>()</span><br><span class="line">	<span class="comment"># 求预测精度</span></span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;Acc: %.5f&#x27;</span> % (correct / <span class="built_in">len</span>(valid_dataset)))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">	train_dataset, valid_dataset, input_dim, class_num = create_dataset()</span><br><span class="line">	train(train_dataset, input_dim, class_num)</span><br><span class="line">	test(valid_dataset, input_dim, class_num)</span><br></pre></td></tr></table></figure>
 
 
-      
     </div>
 
     
@@ -1146,337 +1211,22 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/05/14/%E5%AE%9D%E5%85%B8%E9%9D%A2%E8%AF%95%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="李响">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="你好，欢迎来到李响的博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 你好，欢迎来到李响的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/05/14/%E5%AE%9D%E5%85%B8%E9%9D%A2%E8%AF%95%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/" class="post-title-link" itemprop="url">面试宝典（持续更新)</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-05-14 13:13:15" itemprop="dateCreated datePublished" datetime="2025-05-14T13:13:15+08:00">2025-05-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-05-13 21:51:08" itemprop="dateModified" datetime="2025-05-13T21:51:08+08:00">2025-05-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" itemprop="url" rel="index"><span itemprop="name">技术分享</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="数据结构-94"><a href="#数据结构-94" class="headerlink" title="数据结构(94)"></a>数据结构(94)</h1><p>冒泡排序，<br>选择排序，</p>
-<p>快速排序：</p>
-<p>从数列中挑出一个元素作为基准。<br>重新排列数列，把所有的比基准小的放在基准前面，反之放在后面（一样大可任意一边）完成后基准处在分区的中间位置。<br>通过递归调用把小于基准元素和大雨基准元素的子序列进行排序。</p>
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="python基础"><a href="#python基础" class="headerlink" title="python基础"></a>python基础</h1><p>基本类型：<br>int 有符号整形<br>float 浮点型<br>bool 布尔类型<br>string 字符串类型<br>complex 复数类型</p>
-<p>容器类型：<br>string<br>list<br>tuple<br>set<br>dictionary</p>
-<p>序列类型：</p>
-<p>序列反转：<strong>list.reverse()</strong></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2025/05/14/%E5%AE%9D%E5%85%B8%E9%9D%A2%E8%AF%95%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/05/14/%E5%AE%9D%E5%85%B8%E9%9D%A2%E8%AF%95%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/" rel="prev" title="面试宝典（持续更新)">
+                  <i class="fa fa-angle-left"></i> 面试宝典（持续更新)
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/05/14/Pandas%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="李响">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="你好，欢迎来到李响的博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 你好，欢迎来到李响的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/05/14/Pandas%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">Pandas笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-05-14 13:13:15" itemprop="dateCreated datePublished" datetime="2025-05-14T13:13:15+08:00">2025-05-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-05-13 22:05:43" itemprop="dateModified" datetime="2025-05-13T22:05:43+08:00">2025-05-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" itemprop="url" rel="index"><span itemprop="name">技术分享</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Pandas"><a href="#Pandas" class="headerlink" title="Pandas"></a>Pandas</h1><p>apply() 是 DataFrame 和 Series 的核心方法，用于沿轴应用函数，遍历元素<br>result &#x3D; df.apply(sum, axis&#x3D;0)</p>
-<p>dataframe合并，concat，merge</p>
-<table>
-<thead>
-<tr>
-<th><strong>对比项</strong></th>
-<th><strong>pd.concat()</strong></th>
-<th><strong>pd.merge()</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>合并依据</strong></td>
-<td>按索引或轴（axis）直接拼接</td>
-<td>按指定列或索引的共同值进行连接</td>
-</tr>
-<tr>
-<td><strong>数据结构</strong></td>
-<td>支持 Series 和 DataFrame</td>
-<td>主要用于 DataFrame</td>
-</tr>
-<tr>
-<td><strong>连接方式</strong></td>
-<td>支持 <code>axis=0</code>（纵向）或 <code>axis=1</code>（横向）</td>
-<td>支持 <code>how=&#39;inner&#39;</code>（内连接）、<code>&#39;outer&#39;</code>（外连接）、<code>&#39;left&#39;</code>（左连接）、<code>&#39;right&#39;</code>（右连接）</td>
-</tr>
-<tr>
-<td><strong>重复列处理</strong></td>
-<td>保留所有列（可能出现重复列名）</td>
-<td>自动处理重复列（通过 <code>suffixes</code> 参数）</td>
-</tr>
-<tr>
-<td><strong>典型场景</strong></td>
-<td>合并结构相同的数据（如多个表格）</td>
-<td>基于共同字段关联不同数据源（如 SQL JOIN）</td>
-</tr>
-</tbody></table>
-<p>dataframe去重，# 实施去重操作   drop_duplicates()</p>
-<p>填充空值		fillna</p>
-<h1 id="透视表：pandas数据统计"><a href="#透视表：pandas数据统计" class="headerlink" title="透视表：pandas数据统计"></a>透视表：pandas数据统计</h1><ul>
-<li><p>交叉表（了解）：</p>
-<p>交叉表用于计算一列数据对于另外一列数据的分组个数(用于统计分组频率的特殊透视表)</p>
-<ul>
-<li>pd.crosstab(value1, value2)</li>
-</ul>
-</li>
-<li><p>透视表（掌握）：</p>
-<p>透视表是将原有的DataFrame的列分别作为行索引和列索引，然后对指定的列应用聚集函数</p>
-<ul>
-<li>data.pivot_table(）</li>
-<li>DataFrame.pivot_table([], index&#x3D;[])</li>
-</ul>
-</li>
-</ul>
-<p>在 Pandas 中，<code>pivot()</code> 和 <code>pivot_table()</code> 都用于将长格式数据转换为宽格式（透视表），但它们的功能和适用场景有明显区别：</p>
-<h1 id="matplotlib"><a href="#matplotlib" class="headerlink" title="matplotlib"></a>matplotlib</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">6</span>))</span><br><span class="line">n, bins, patches = plt.hist(data, bins=<span class="number">20</span>, color=<span class="string">&#x27;lightgreen&#x27;</span>, edgecolor=<span class="string">&#x27;black&#x27;</span>, alpha=<span class="number">0.7</span>)</span><br><span class="line">    </span><br><span class="line">    plt.title(<span class="string">&#x27;身高分布直方图&#x27;</span>, fontsize=<span class="number">16</span>)</span><br><span class="line">    plt.xlabel(<span class="string">&#x27;身高 (cm)&#x27;</span>, fontsize=<span class="number">14</span>)</span><br><span class="line">    plt.ylabel(<span class="string">&#x27;频率&#x27;</span>, fontsize=<span class="number">14</span>)</span><br><span class="line">    plt.grid(axis=<span class="string">&#x27;y&#x27;</span>, linestyle=<span class="string">&#x27;--&#x27;</span>, alpha=<span class="number">0.7</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 添加均值线</span></span><br><span class="line">    plt.axvline(data.mean(), color=<span class="string">&#x27;r&#x27;</span>, linestyle=<span class="string">&#x27;dashed&#x27;</span>, linewidth=<span class="number">2</span>, label=<span class="string">f&#x27;均值: <span class="subst">&#123;data.mean():<span class="number">.2</span>f&#125;</span>&#x27;</span>)</span><br><span class="line">    plt.legend()</span><br><span class="line"></span><br><span class="line">    plt.tight_layout()</span><br><span class="line">    plt.savefig(<span class="string">&#x27;histogram.png&#x27;</span>)</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/05/14/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="李响">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="你好，欢迎来到李响的博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 你好，欢迎来到李响的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/05/14/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-05-14 12:55:52" itemprop="dateCreated datePublished" datetime="2025-05-14T12:55:52+08:00">2025-05-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-05-12 20:34:15" itemprop="dateModified" datetime="2025-05-12T20:34:15+08:00">2025-05-12</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
 
 
 
