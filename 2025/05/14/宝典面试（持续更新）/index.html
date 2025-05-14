@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="数据结构(94)冒泡排序，选择排序， 快速排序： 从数列中挑出一个元素作为基准。重新排列数列，把所有的比基准小的放在基准前面，反之放在后面（一样大可任意一边）完成后基准处在分区的中间位置。通过递归调用把小于基准元素和大雨基准元素的子序列进行排序。 python基础基本类型：int 有符号整形float 浮点型bool 布尔类型string 字符串类型complex 复数类型 容器类型：string">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试宝典（持续更新)">
+<meta property="og:url" content="http://example.com/2025/05/14/%E5%AE%9D%E5%85%B8%E9%9D%A2%E8%AF%95%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/index.html">
+<meta property="og:site_name" content="你好，欢迎来到李响的博客">
+<meta property="og:description" content="数据结构(94)冒泡排序，选择排序， 快速排序： 从数列中挑出一个元素作为基准。重新排列数列，把所有的比基准小的放在基准前面，反之放在后面（一样大可任意一边）完成后基准处在分区的中间位置。通过递归调用把小于基准元素和大雨基准元素的子序列进行排序。 python基础基本类型：int 有符号整形float 浮点型bool 布尔类型string 字符串类型complex 复数类型 容器类型：string">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="e:/003Python/004Study/002%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/03_%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/day06_%E5%86%B3%E7%AD%96%E6%A0%91/01_%E7%AC%94%E8%AE%B0/images/image-20230905150018847.png">
+<meta property="og:image" content="e:/003Python/004Study/002%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/03_%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/day06_%E5%86%B3%E7%AD%96%E6%A0%91/01_%E7%AC%94%E8%AE%B0/images/image-20230905153217302.png">
+<meta property="og:image" content="http://example.com/images/image-20230904182146483.png">
+<meta property="article:published_time" content="2025-05-14T05:13:15.790Z">
+<meta property="article:modified_time" content="2025-05-13T13:51:08.418Z">
+<meta property="article:author" content="李响">
+<meta property="article:tag" content="python基础">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="e:/003Python/004Study/002%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/03_%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/day06_%E5%86%B3%E7%AD%96%E6%A0%91/01_%E7%AC%94%E8%AE%B0/images/image-20230905150018847.png">
+
+
+<link rel="canonical" href="http://example.com/2025/05/14/%E5%AE%9D%E5%85%B8%E9%9D%A2%E8%AF%95%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2025/05/14/%E5%AE%9D%E5%85%B8%E9%9D%A2%E8%AF%95%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/","path":"2025/05/14/宝典面试（持续更新）/","title":"面试宝典（持续更新)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>面试宝典（持续更新) | 你好，欢迎来到李响的博客</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">你好，欢迎来到李响的博客</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">2</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">1</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">3</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-94"><span class="nav-number">1.</span> <span class="nav-text">数据结构(94)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python%E5%9F%BA%E7%A1%80"><span class="nav-number">3.</span> <span class="nav-text">python基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%89%E5%BA%8F%E5%AE%B9%E5%99%A8%E7%B1%BB%E5%9E%8B%EF%BC%9A"><span class="nav-number">4.</span> <span class="nav-text">有序容器类型：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99%E5%87%BD%E6%95%B0"><span class="nav-number">5.</span> <span class="nav-text">文件读写函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#while%E5%92%8Cfor%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9A"><span class="nav-number">6.</span> <span class="nav-text">while和for的区别：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB%E5%99%A8%E4%B8%8E%E2%BE%AE%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB%E5%99%A8"><span class="nav-number">7.</span> <span class="nav-text">线性分类器与⾮线性分类器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E6%AD%A3%E8%B4%9F%E6%A0%B7%E6%9C%AC"><span class="nav-number">8.</span> <span class="nav-text">机器学习中的正负样本</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%B3%95%E5%8C%85%E6%8B%AC%EF%BC%9A"><span class="nav-number">9.</span> <span class="nav-text">特征选择的三种方法包括：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B%E4%B8%8E%E4%B8%89%E8%A6%81%E7%B4%A0"><span class="nav-number">10.</span> <span class="nav-text">机器学习的基本过程与三要素</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E8%BF%87%E6%8B%9F%E5%90%88%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="nav-number">11.</span> <span class="nav-text">解决过拟合问题：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AC%A7%E6%B0%8F%E8%B7%9D%E7%A6%BB%E5%92%8C%E6%9B%BC%E5%93%88%E9%A1%BF%E8%B7%9D%E7%A6%BB%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">12.</span> <span class="nav-text">欧氏距离和曼哈顿距离的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E5%8E%9F%E7%90%86%EF%BC%9A"><span class="nav-number">13.</span> <span class="nav-text">逻辑回归原理：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%B3%E7%AD%96%E6%A0%91"><span class="nav-number">14.</span> <span class="nav-text">决策树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ID3%E6%A0%91%E6%9E%84%E5%BB%BA%E6%B5%81%E7%A8%8B"><span class="nav-number">14.1.</span> <span class="nav-text">ID3树构建流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C4-5%E5%86%B3%E7%AD%96%E6%A0%91"><span class="nav-number">14.2.</span> <span class="nav-text">C4.5决策树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cart%E6%A0%91"><span class="nav-number">14.3.</span> <span class="nav-text">Cart树</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#k-means%E8%81%9A%E7%B1%BB%E6%B5%81%E7%A8%8B"><span class="nav-number">15.</span> <span class="nav-text">k-means聚类流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%81%9A%E7%B1%BB%E8%AF%84%E4%BC%B0"><span class="nav-number">16.</span> <span class="nav-text">聚类评估</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ROC-%E6%9B%B2%E7%BA%BF"><span class="nav-number">16.1.</span> <span class="nav-text">ROC 曲线</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">李响</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/05/14/%E5%AE%9D%E5%85%B8%E9%9D%A2%E8%AF%95%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="李响">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="你好，欢迎来到李响的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="面试宝典（持续更新) | 你好，欢迎来到李响的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          面试宝典（持续更新)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-05-14 13:13:15" itemprop="dateCreated datePublished" datetime="2025-05-14T13:13:15+08:00">2025-05-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-05-13 21:51:08" itemprop="dateModified" datetime="2025-05-13T21:51:08+08:00">2025-05-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" itemprop="url" rel="index"><span itemprop="name">技术分享</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="数据结构-94"><a href="#数据结构-94" class="headerlink" title="数据结构(94)"></a>数据结构(94)</h1><p>冒泡排序，<br>选择排序，</p>
+<p>快速排序：</p>
+<p>从数列中挑出一个元素作为基准。<br>重新排列数列，把所有的比基准小的放在基准前面，反之放在后面（一样大可任意一边）完成后基准处在分区的中间位置。<br>通过递归调用把小于基准元素和大雨基准元素的子序列进行排序。</p>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="python基础"><a href="#python基础" class="headerlink" title="python基础"></a>python基础</h1><p>基本类型：<br>int 有符号整形<br>float 浮点型<br>bool 布尔类型<br>string 字符串类型<br>complex 复数类型</p>
+<p>容器类型：<br>string<br>list<br>tuple<br>set<br>dictionary</p>
+<p>序列类型：</p>
+<p>序列反转：<strong>list.reverse()</strong></p>
+<span id="more"></span>
+
+<h1 id="有序容器类型："><a href="#有序容器类型：" class="headerlink" title="有序容器类型："></a>有序容器类型：</h1><p>除了set，dictionary之外均有序，看是否有序，看打乱顺序前后的容器是否是同一个；</p>
+<p>list增加元素，append，insert，extend(容器拉平)</p>
+<p>set增加元素，add，update，</p>
+<h1 id="文件读写函数"><a href="#文件读写函数" class="headerlink" title="文件读写函数"></a>文件读写函数</h1><p>在 Python 中，文件读写操作主要通过内置函数 <code>open()</code> 和相关方法实现。以下是详细介绍：</p>
+<p>使用 <code>open(file_path, mode)</code> 打开文件，<code>mode</code> 参数决定读写方式：</p>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&#39;r&#39;</code></td>
+<td>只读（默认），文件必须存在。</td>
+</tr>
+<tr>
+<td><code>&#39;w&#39;</code></td>
+<td>写入，覆盖原有内容（文件不存在则创建）。</td>
+</tr>
+<tr>
+<td><code>&#39;a&#39;</code></td>
+<td>追加，在文件末尾添加内容（文件不存在则创建）。</td>
+</tr>
+<tr>
+<td><code>&#39;x&#39;</code></td>
+<td>独占创建，文件不存在时创建，存在则报错。</td>
+</tr>
+<tr>
+<td><code>&#39;b&#39;</code></td>
+<td>二进制模式，与其他模式组合使用（如 <code>&#39;rb&#39;</code>）。</td>
+</tr>
+<tr>
+<td><code>&#39;t&#39;</code></td>
+<td>文本模式（默认，可省略）。</td>
+</tr>
+<tr>
+<td><code>&#39;+&#39;</code></td>
+<td>读写模式，与其他模式组合使用（如 <code>&#39;r+&#39;</code>）。</td>
+</tr>
+</tbody></table>
+<h1 id="while和for的区别："><a href="#while和for的区别：" class="headerlink" title="while和for的区别："></a>while和for的区别：</h1><p>while更灵活</p>
+<p>for适用于已知循环次数的情况，写法更简洁；</p>
+<h1 id="线性分类器与⾮线性分类器"><a href="#线性分类器与⾮线性分类器" class="headerlink" title="线性分类器与⾮线性分类器"></a>线性分类器与⾮线性分类器</h1><p>区别：所谓线性分类器即⽤⼀个超平⾯将正负样本分离开，表达式为 y&#x3D;wx 。这⾥强调的是平⾯。<br>⽽⾮线性的分类界⾯没有这个限制，可以是曲⾯，多个超平⾯的组合等。<br>典型的线性分类器有感知机，LDA，逻辑斯特回归，SVM（线性核）；<br>典型的⾮线性分类器有朴素⻉叶斯（有⽂章说这个本质是线性的，<a target="_blank" rel="noopener" href="http://dataunion.org/12344.html%EF%BC%89%EF%BC%8CkNN%EF%BC%8C%E5%86%B3%E7%AD%96%E6%A0%91%EF%BC%8CSVM%EF%BC%88%E2%BE%AE%E7%BA%BF%E6%80%A7%E6%A0%B8%EF%BC%89">http://dataunion.org/12344.html），kNN，决策树，SVM（⾮线性核）</a><br>优缺点：1.线性分类器判别简单、易实现、且需要的计算量和存储量⼩。<br>为解决⽐较复杂的线性不可分样本分类问题，提出⾮线性判别函数。：超曲⾯，⾮线性判别函数计算复杂，实际应⽤上<br>受到较⼤的限制。在线性分类器的基础上，⽤分段线性分类器可以实现复杂的分类⾯。解决问题⽐较简便的⽅法是采⽤<br>多个线性分界⾯将它们分段连接，⽤分段线性判别划分去逼近分界的超曲⾯。<br>如果⼀个问题是⾮线性问题并且它的类边界不能够⽤线性超平⾯估计得很好，那么⾮线性分类器通常会⽐线性分类器表<br>现得更精准。如果⼀个问题是线性的，那么最好使⽤简单的线性分类器来处理</p>
+<h1 id="机器学习中的正负样本"><a href="#机器学习中的正负样本" class="headerlink" title="机器学习中的正负样本"></a>机器学习中的正负样本</h1><p>在分类问题中，这个问题相对好理解⼀点，⽐如⼈脸识别中的例⼦，正样本很好理解，就是⼈脸的图⽚，负样本的选取<br>就与问题场景相关，具体⽽⾔，如果你要进⾏教室中学⽣的⼈脸识别，那么负样本就是教室的窗⼦、墙等等，也就是<br>说，不能是与你要研究的问题毫不相关的乱七⼋糟的场景图⽚，这样的负样本并没有意义。负样本可以根据背景⽣成，<br>有时候不需要寻找额外的负样本。⼀般3000-10000的正样本需要5，000,000-100,000,000的负样本来学习，</p>
+<h1 id="特征选择的三种方法包括："><a href="#特征选择的三种方法包括：" class="headerlink" title="特征选择的三种方法包括："></a>特征选择的三种方法包括：</h1><p>过滤法 (Filter)：按照发散性或相关性对各个特征进行评分，设定阈值或待选择特征的个数进行筛选。卡方检验；<br>包裹法 (Wrapper)：根据目标函数（通常是预测效果评分），每次选择若干特征或排除若干特征。<br>嵌入法 (Embedded)：先使用机器学习模型进行训练，得到各个特征的权值系数，根据系数从大到小选择特征。<br>特征选择的⽅法<br>Filter⽅法：卡⽅检验、信息增益、相关系数<br>Wrapper⽅法<br>其主要思想是：将⼦集的选择看作是⼀个搜索寻优问题，⽣成不同的组合，对组合进⾏评价，再与其他的组合进⾏⽐<br>较。这样就将⼦集的选择看作是⼀个是⼀个优化问题，这⾥有很多的优化算法可以解决，尤其是⼀些启发式的优化算<br>法，如GA，PSO，DE，ABC等，详⻅“优化算法——⼈⼯蜂群算法(ABC)”，“优化算法——粒⼦群算法(PSO)”。<br>Embedded⽅法<br>其主要思想是：在模型既定的情况下学习出对提⾼模型准确性最好的属性。这句话并不是很好理解，其实是讲在确定模<br>型的过程中，挑选出那些对模型的训练有重要意义的属性。<br>主要⽅法：正则化。岭回归就是在基本线性回归的过程中加⼊了正则项</p>
+<h1 id="机器学习的基本过程与三要素"><a href="#机器学习的基本过程与三要素" class="headerlink" title="机器学习的基本过程与三要素"></a>机器学习的基本过程与三要素</h1><p>模型<br>模型是机器学习的核心，它决定了机器学习所能理解和解决的问题类型。模型的选择和优化是一个复杂的过程，需要考虑许多因素，如数据的特性和问题的需求。<br>常见的模型包括回归模型、分类模型和聚类模型等<br>策略<br>策略是机器学习的第二个要素，它决定了如何从数据中学习模型。<br>策略通过引入损失函数来度量模型的好坏，并指导模型的学习过程。<br>损失函数是衡量模型预测结果与真实结果差距的重要工具，通过最小化损失函数，可以找到最优模型<br>算法<br>算法是实现模型和策略的工具，旨在寻找模型的最优参数。<br>常见的优化算法有梯度下降法、牛顿法和共轭梯度法等。<br>这些算法通过最小化经验风险函数或结构风险函数，求解最优模型的参数。</p>
+<p>统计学习&#x3D;模型+策略+算法<br>模型：规律y&#x3D;ax+b<br>策略：什么样的模型是好的模型？损失函数<br>算法：如何⾼效找到最优参数，模型中的参数a和b </p>
+<h1 id="解决过拟合问题："><a href="#解决过拟合问题：" class="headerlink" title="解决过拟合问题："></a>解决过拟合问题：</h1><p>增加训练量，数据清洗，特征降维，正则化</p>
+<h1 id="欧氏距离和曼哈顿距离的区别"><a href="#欧氏距离和曼哈顿距离的区别" class="headerlink" title="欧氏距离和曼哈顿距离的区别"></a>欧氏距离和曼哈顿距离的区别</h1><h1 id="逻辑回归原理："><a href="#逻辑回归原理：" class="headerlink" title="逻辑回归原理："></a>逻辑回归原理：</h1><p>一种分类模型，把线性回归的输出，作为逻辑回归的输入。输出是（0, 1）之间的值。<br>利用线性模型 f(x) &#x3D; w^Tx + b 根据特征的重要性计算出一个值<br>再使用 sigmoid 函数将 f(x) 的输出值映射为概率值<br>设置阈值(eg：0.5)，输出概率值大于 0.5，则将未知样本输出为 1 类<br>否则输出为 0 类</p>
+<h1 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h1><p>决策树是一种树形结构，树中每个内部节点表示一个特征上的判断，每个分支代表一个判断结果的输出，每个叶子节点代表一种分类结果</p>
+<h2 id="ID3树构建流程"><a href="#ID3树构建流程" class="headerlink" title="ID3树构建流程"></a>ID3树构建流程</h2><p><strong>构建流程：</strong></p>
+<ol>
+<li>计算每个特征的信息增益</li>
+<li>使用信息增益最大的特征将数据集 S 拆分为子集</li>
+<li>使用该特征（信息增益最大的特征）作为决策树的一个节点</li>
+<li>使用剩余特征对子集重复上述（1，2，3）过程</li>
+</ol>
+<h2 id="C4-5决策树"><a href="#C4-5决策树" class="headerlink" title="C4.5决策树"></a>C4.5决策树</h2><p>【理解】信息增益率</p>
+<p><img src="E:/003Python/004Study/002%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/03_%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/day06_%E5%86%B3%E7%AD%96%E6%A0%91/01_%E7%AC%94%E8%AE%B0/images/image-20230905150018847.png" alt="image-20230905150018847"></p>
+<ol>
+<li>Gain_Ratio 表示信息增益率</li>
+<li>IV 表示分裂信息、内在信息</li>
+<li>特征的信息增益 ➗ 内在信息<ol>
+<li>如果某个特征的特征值种类较多，则其内在信息值就越大。即：特征值种类越多，除以的系数就越大。</li>
+<li>如果某个特征的特征值种类较小，则其内在信息值就越小。即：特征值种类越小，除以的系数就越小。</li>
+</ol>
+</li>
+</ol>
+<h2 id="Cart树"><a href="#Cart树" class="headerlink" title="Cart树"></a>Cart树</h2><p>Cart模型是一种决策树模型，它即可以用于分类，也可以用于回归。</p>
+<p>分类和回归树模型采用不同的最优化策略。Cart回归树使用平方误差最小化策略，Cart分类生成树采用的基尼指数最小化策略。</p>
+<p>【理解】基尼指数计算方法</p>
+<p><img src="E:/003Python/004Study/002%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/03_%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/day06_%E5%86%B3%E7%AD%96%E6%A0%91/01_%E7%AC%94%E8%AE%B0/images/image-20230905153217302.png" alt="image-20230905153217302"></p>
+<ol>
+<li>信息增益（ID3）、信息增益率值越大（C4.5），则说明优先选择该特征。</li>
+<li>基尼指数值越小（cart），则说明优先选择该特征。</li>
+</ol>
+<h1 id="k-means聚类流程"><a href="#k-means聚类流程" class="headerlink" title="k-means聚类流程"></a>k-means聚类流程</h1><p>1、随机设置K个特征空间内的点作为初始的聚类中心</p>
+<p>2、对于其他每个点计算到K个中心的距离，未知的点选择最近的一个聚类中心点作为标记类别</p>
+<p>3、接着对着标记的聚类中心之后，重新计算出每个聚类的新中心点（平均值）</p>
+<p>4、如果计算得出的新中心点与原中心点一样（质心不再移动），那么结束，否则重新进行第二步过程</p>
+<h1 id="聚类评估"><a href="#聚类评估" class="headerlink" title="聚类评估"></a>聚类评估</h1><p> SSE-误差平方和</p>
+<p>​	误差平方和</p>
+<p>SC 系数</p>
+<ol>
+<li>计算每一个样本 i 到同簇内其他样本的平均距离 a<sub>i</sub>，该值越小，说明簇内的相似程度越大</li>
+<li>计算每一个样本 i 到最近簇 j 内的所有样本的平均距离 b<sub>ij</sub>，该值越大，说明该样本越不属于其他簇 j</li>
+<li>计算所有样本的平均轮廓系数</li>
+<li>轮廓系数的范围为：[-1, 1]，值越大聚类效果越好</li>
+</ol>
+<p>CH 系数</p>
+<h2 id="ROC-曲线"><a href="#ROC-曲线" class="headerlink" title="ROC 曲线"></a>ROC 曲线</h2><p>ROC 曲线：我们分别考虑正负样本的情况：</p>
+<ol>
+<li>正样本中被预测为正样本的概率，即：TPR （True Positive Rate）</li>
+<li>负样本中被预测为正样本的概率，即：FPR （False Positive Rate）</li>
+</ol>
+<p><img src="/images/image-20230904182146483.png" alt="image-20230904182146483"></p>
+<p>ROC 曲线图像中，4 个特殊点的含义：</p>
+<ol>
+<li>(0, 0) 表示所有的正样本都预测为错误，所有的负样本都预测正确</li>
+<li>(1, 0) 表示所有的正样本都预测错误，所有的负样本都预测错误</li>
+<li>(1, 1) 表示所有的正样本都预测正确，所有的负样本都预测错误</li>
+<li>(0, 1) 表示所有的正样本都预测正确，所有的负样本都预测正确</li>
+</ol>
+<p>• 熟悉逻辑回归、Kmeans等基础模型，掌握AdaBoost、XGBoost等集成学习方法。</p>
+<p>• 熟悉交叉验证与网格搜索相结合的超参数调优策略，熟悉分类、聚类模型的评估方法。<br>分类模型的评估方法：</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/python%E5%9F%BA%E7%A1%80/" rel="tag"># python基础</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/05/14/Pandas%E7%AC%94%E8%AE%B0/" rel="prev" title="Pandas笔记">
+                  <i class="fa fa-angle-left"></i> Pandas笔记
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">李响</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
