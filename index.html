@@ -209,7 +209,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-05-16 14:42:13" itemprop="dateModified" datetime="2025-05-16T14:42:13+08:00">2025-05-16</time>
+      <time title="修改时间：2025-05-16 15:08:14" itemprop="dateModified" datetime="2025-05-16T15:08:14+08:00">2025-05-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -237,11 +237,11 @@
 <p>人脑可以看做是一个生物神经网络，由众多的<strong>神经元</strong>连接而成。各个神经元传递复杂的电信号，树突接收到<strong>输入信号</strong>，然后对信号进行处理，通过轴突<strong>输出信号</strong>。</p>
 <p>当电信号通过树突进入到细胞核时，会逐渐聚集电荷。达到一定的电位后，细胞就会被激活，通过轴突发出电信号。</p>
 <h4 id="如何构建神经网络"><a href="#如何构建神经网络" class="headerlink" title="如何构建神经网络"></a>如何构建神经网络</h4><p>神经网络是由多个神经元组成，构建神经网络就是在构建神经元。以下是神经网络中神经元的构建说明：</p>
-<p><img src="/%5Cimages%5CNN_base%5C08.png" alt="08"></p>
+<p><img src="/images/NN_base/08.png" alt="08"></p>
 <p>这个流程就像，来源不同树突(树突都会有不同的权重)的信息, 进行的加权计算, 输入到细胞中做加和，再通过激活函数输出细胞值。</p>
 <p>同一层的多个神经元可以看作是通过并行计算来处理相同的输入数据，学习输入数据的不同特征。每个神经元可能会关注输入数据中的不同部分，从而捕捉到数据的不同属性。</p>
 <p>接下来，我们使用多个神经元来构建神经网络，相邻层之间的神经元相互连接，并给每一个连接分配一个强度，如下图所示：</p>
-<p><img src="/%5Cimages%5CNN_base%5C07.png" alt="07"></p>
+<p><img src="/images/NN_base/07.png" alt="07"></p>
 <p>神经网络中信息只向一个方向移动，即从输入节点向前移动，通过隐藏节点，再向输出节点移动。其中的基本部分是:</p>
 <ol>
 <li><strong>输入层（Input Layer）</strong>: 即输入x的那一层（如图像、文本、声音等）。每个输入特征对应一个神经元。输入层将数据传递给下一层的神经元。</li>
@@ -256,7 +256,7 @@
 <li>第N-1层神经元的输出就是第N层神经元的输入</li>
 <li>每个连接都有一个权重值（w系数和b系数）</li>
 </ul>
-<h4 id="神经网络内部状态值和激活值"><a href="#神经网络内部状态值和激活值" class="headerlink" title="神经网络内部状态值和激活值"></a>神经网络内部状态值和激活值</h4><p><img src="/%5Cimages%5CNN_base%5Cimage-20220313130303542.png" alt="image-20220313130303542"></p>
+<h4 id="神经网络内部状态值和激活值"><a href="#神经网络内部状态值和激活值" class="headerlink" title="神经网络内部状态值和激活值"></a>神经网络内部状态值和激活值</h4><p><img src="/images/NN_base/image-20220313130303542.png" alt="image-20220313130303542"></p>
 <p>每一个神经元工作时，<strong>前向传播</strong>会产生两个值，<strong>内部状态值（加权求和值）<strong>和</strong>激活值</strong>；<strong>反向传播</strong>时会产生<strong>激活值梯度</strong>和<strong>内部状态值梯度</strong>。</p>
 <ul>
 <li><p>内部状态值</p>
@@ -296,17 +296,17 @@
 <p>​		<img src="/images/NN_base/09.png" alt=" "><br>​		<img src="/images/NN_base/10.png" alt=" "></p>
 <p>另外通过图像可视化的形式理解：</p>
 <p><a target="_blank" rel="noopener" href='http://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=4,2&seed=0.97420&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false'>神经网络可视化</a></p>
-<p><img src="/%5Cimages%5CNN_base%5C11.png" alt="11"></p>
+<p><img src="/images/NN_base/11.png" alt="11"></p>
 <p>我们发现增加激活函数之后, 对于线性不可分的场景，神经网络的拟合能力更强。</p>
 <h4 id="常见激活函数"><a href="#常见激活函数" class="headerlink" title="常见激活函数"></a>常见激活函数</h4><blockquote>
 <p>激活函数主要用来向神经网络中加入非线性因素，以解决线性模型表达能力不足的问题，它对神经网络有着极其重要的作用。我们的网络参数在更新时，使用的反向传播算法（BP），这就要求我们的激活函数必须可微。</p>
 </blockquote>
 <h5 id="Sigmoid-激活函数"><a href="#Sigmoid-激活函数" class="headerlink" title="Sigmoid 激活函数"></a>Sigmoid 激活函数</h5><p>激活函数公式：</p>
-<p><img src="/%5Cimages%5CNN_base%5C21.png" alt="21"></p>
+<p><img src="/images/NN_base/21.png" alt="21"></p>
 <p>激活函数求导公式：</p>
-<p><img src="/%5Cimages%5CNN_base%5C1663472645904.png" alt="1663472645904"></p>
+<p><img src="/images/NN_base/1663472645904.png" alt="1663472645904"></p>
 <p>sigmoid 激活函数的函数图像如下:</p>
-<p><img src="/%5Cimages%5CNN_base%5C25.png" alt="25"></p>
+<p><img src="/images/NN_base/25.png" alt="25"></p>
 <ul>
 <li><p>从sigmoid函数图像可以得到，sigmoid 函数可以将<strong>任意的输入</strong>映射到 <strong>(0, 1)</strong> 之间，当输入的值大致在**&lt;-6或者&gt;6**时，意味着输入任何值得到的激活值都是差不多的，这样会丢失部分的信息。比如：输入100和输入10000经过 sigmoid的激活值几乎都是等于1的，但是输入的数据之间相差100倍的信息就丢失了。</p>
 </li>
@@ -832,7 +832,7 @@
 <p>​        $$\hat{m_t}​$$ &#x3D; $$m_t\over1−β_1^t​$$, $$\hat{s_t}​$$&#x3D;$$s_t\over1−β_2^t​$$</p>
 </li>
 <li><p><strong>权重参数更新公式</strong>:</p>
-<p>   ​        $$w_t​$$ &#x3D; $$w_{t−1}​$$ − $$η\over\sqrt{\hat{s_t}}+ϵ​$$$\hat{m_t}​$</p>
+<p>   ​        $$w_t$$ &#x3D; $$w_{t−1}$$ − $$η\over\sqrt{\hat{s_t}}+ϵ$$$\hat{m_t}$</p>
 </li>
 </ul>
 <p>其中，$$m_t$$ 是梯度的一阶矩估计，$$s_t$$ 是梯度的二阶矩估计，$$ \hat{m_t}$$和 $$\hat{s_t}$$ 是偏差校正后的估计。</p>
