@@ -1220,7 +1220,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #ff47a3;
+    background: #c10ee0;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2671,6 +2671,7 @@ body {
 }
 .content-wrap {
   opacity: 0.9;
+  border-radius: 10px; /* 添加圆角，值越大圆角越明显 */
 }
 .post-block {
   background: rgba(255,255,255,0.9) none repeat scroll !important;
@@ -2683,17 +2684,8 @@ body {
 }
 .header-inner {
   background: rgba(255,255,255,0.8);
+  border-radius: 10px; /* 添加圆角，值越大圆角越明显 */
 }
-.post {
-/* 其他样式... */
-  box-shadow: 0 45px 90px rgba(0,0,0,0.9), 0 5px 15px rgba(0,0,0,0.07);
-/* 辅助阴影 */
-  transition: all 0.3s ease;
-  transform: translateY(0);
-/* 悬停效果 */
-}
-.post:hover {
-  box-shadow: 0 25px 50px rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.1);
-/* 悬停时的辅助阴影 */
-  transform: translateY(-6px); /* 更大的上浮效果 */
+.popup {
+  opacity: 0.8;
 }
