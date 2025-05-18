@@ -1220,7 +1220,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #cf40ff;
+    background: #ff8558;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2672,11 +2672,9 @@ body {
 }
 .content-wrap {
   opacity: 0.9;
-  border-radius: 10px; /* 添加圆角，值越大圆角越明显 */
 }
 .post-block {
   background: rgba(255,255,255,0.9) none repeat scroll !important;
-  border-radius: 10px; /* 添加圆角，值越大圆角越明显 */
 }
 .sidebar-inner {
   background: rgba(255,255,255,0.9) none repeat scroll !important;
@@ -2685,10 +2683,6 @@ body {
 }
 .header-inner {
   background: rgba(255,255,255,0.8);
-  border-radius: 10px; /* 添加圆角，值越大圆角越明显 */
-}
-.header-inner .menu-item {
-  background: transparent !important;
 }
 .popup {
   opacity: 0.8;
