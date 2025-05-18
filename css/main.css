@@ -1220,7 +1220,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #ff8558;
+    background: #479f06;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2678,8 +2678,6 @@ body {
 }
 .sidebar-inner {
   background: rgba(255,255,255,0.9) none repeat scroll !important;
-  border-radius: 10px; /* 添加圆角，值越大圆角越明显 */
-  overflow: hidden; /* 关键：隐藏溢出内容 */
 }
 .header-inner {
   background: rgba(255,255,255,0.8);
