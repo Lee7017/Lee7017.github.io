@@ -1220,7 +1220,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #ffffde;
+    background: #b9ff86;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2673,7 +2673,7 @@ body {
   opacity: 0.9;
 }
 .post-block {
-  background: rgba(255,255,255,0.7) none repeat scroll !important;
+  background: rgba(255,255,255,0.9) none repeat scroll !important;
 }
 .sidebar-inner {
   background: rgba(255,255,255,0.9) none repeat scroll !important;
@@ -2685,9 +2685,12 @@ body {
   opacity: 0.8;
 }
 .post {
-  margin-top: 60px;
-  padding: 20px;
-  margin-bottom: 60px;
-  -webkit-box-shadow: 0 0 5px #788072;
-  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+/* 其他样式... */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
+/* 辅助阴影增强层次感 */
+  transition: box-shadow 0.3s ease; /* 添加过渡动画 */
+/* 悬停效果 */
+}
+.post:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 4px 8px rgba(0,0,0,0.1);
 }
