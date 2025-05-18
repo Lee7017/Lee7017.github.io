@@ -1220,7 +1220,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #b913a1;
+    background: #a47a61;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2671,7 +2671,7 @@ body {
 }
 .content-wrap {
   opacity: 0.9;
-  hexo: hexo hexo d;
+  border-radius: 10px; /* 添加圆角，值越大圆角越明显 */
 }
 .post-block {
   background: rgba(255,255,255,0.9) none repeat scroll !important;
