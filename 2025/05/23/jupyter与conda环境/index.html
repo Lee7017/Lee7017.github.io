@@ -19,25 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="愿你我都做生活的高手">
-<meta property="og:type" content="website">
+    <meta name="description" content="在不同环境中配置Python内核有时候，您可能需要在不同的环境中配置和运行Python内核。一个常见的例子是使用虚拟环境，以便隔离不同项目的依赖关系。 以下是在 Jupyter 中配置不同环境的步骤： 创建虚拟环境– 使用您选择的工具（例如venv、conda等）创建一个新的虚拟环境。这可以确保您的依赖关系不会与其他项目冲突。 安装Jupyter – 在虚拟环境中使用pip或conda安装Jupy">
+<meta property="og:type" content="article">
 <meta property="og:title" content="李响，欢迎你回来">
-<meta property="og:url" content="http://example.com/archives/2025/index.html">
+<meta property="og:url" content="http://example.com/2025/05/23/jupyter%E4%B8%8Econda%E7%8E%AF%E5%A2%83/index.html">
 <meta property="og:site_name" content="李响，欢迎你回来">
-<meta property="og:description" content="愿你我都做生活的高手">
+<meta property="og:description" content="在不同环境中配置Python内核有时候，您可能需要在不同的环境中配置和运行Python内核。一个常见的例子是使用虚拟环境，以便隔离不同项目的依赖关系。 以下是在 Jupyter 中配置不同环境的步骤： 创建虚拟环境– 使用您选择的工具（例如venv、conda等）创建一个新的虚拟环境。这可以确保您的依赖关系不会与其他项目冲突。 安装Jupyter – 在虚拟环境中使用pip或conda安装Jupy">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-05-23T00:39:36.950Z">
+<meta property="article:modified_time" content="2025-05-23T00:46:54.296Z">
 <meta property="article:author" content="李响">
 <meta property="article:tag" content="技术,博客,编程,生活">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/archives/2025/">
+<link rel="canonical" href="http://example.com/2025/05/23/jupyter%E4%B8%8Econda%E7%8E%AF%E5%A2%83/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"archives/2025/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2025/05/23/jupyter%E4%B8%8Econda%E7%8E%AF%E5%A2%83/","path":"2025/05/23/jupyter与conda环境/","title":""}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>归档 | 李响，欢迎你回来</title>
+<title> | 李响，欢迎你回来</title>
   
 
 
@@ -87,7 +89,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">李响，欢迎你回来</h1>
+      <p class="site-title">李响，欢迎你回来</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">本网站是我的个人博客，主要用于记录我个人学习的内容以及一些杂谈、心情记录、文摘等</p>
@@ -114,7 +116,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -127,6 +129,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9C%A8%E4%B8%8D%E5%90%8C%E7%8E%AF%E5%A2%83%E4%B8%AD%E9%85%8D%E7%BD%AEPython%E5%86%85%E6%A0%B8"><span class="nav-number">1.</span> <span class="nav-text">在不同环境中配置Python内核</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="nav-number">1.1.</span> <span class="nav-text">创建虚拟环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Jupyter"><span class="nav-number">1.2.</span> <span class="nav-text">安装Jupyter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E6%B7%BB%E5%8A%A0%E5%88%B0Jupyter%E5%86%85%E6%A0%B8"><span class="nav-number">1.3.</span> <span class="nav-text">将虚拟环境添加到Jupyter内核</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8Jupyter-Notebook"><span class="nav-number">1.4.</span> <span class="nav-text">启动Jupyter Notebook</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -170,169 +173,99 @@
 
     </div>
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 7 篇日志。 继续努力。</span>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/05/23/jupyter%E4%B8%8Econda%E7%8E%AF%E5%A2%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="李响">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="李响，欢迎你回来">
+      <meta itemprop="description" content="愿你我都做生活的高手">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 李响，欢迎你回来">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2025<span class="collection-year-count">7</span></span>
+
+      <time title="创建时间：2025-05-23 08:39:36 / 修改时间：08:46:54" itemprop="dateCreated datePublished" datetime="2025-05-23T08:39:36+08:00">2025-05-23</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="在不同环境中配置Python内核"><a href="#在不同环境中配置Python内核" class="headerlink" title="在不同环境中配置Python内核"></a>在不同环境中配置Python内核</h1><p>有时候，您可能需要在不同的环境中配置和运行Python内核。一个常见的例子是使用虚拟环境，以便隔离不同项目的依赖关系。</p>
+<p>以下是在 Jupyter 中配置不同环境的步骤：</p>
+<h2 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h2><p>– 使用您选择的工具（例如venv、conda等）创建一个新的虚拟环境。这可以确保您的依赖关系不会与其他项目冲突。</p>
+<h2 id="安装Jupyter"><a href="#安装Jupyter" class="headerlink" title="安装Jupyter"></a><strong>安装Jupyter</strong></h2><ol>
+<li>– 在虚拟环境中使用pip或conda安装Jupyter Notebook。</li>
+<li><strong>安装内核</strong> – 在虚拟环境中使用ipykernel包安装Jupyter内核。</li>
+</ol>
+<h2 id="将虚拟环境添加到Jupyter内核"><a href="#将虚拟环境添加到Jupyter内核" class="headerlink" title="将虚拟环境添加到Jupyter内核"></a><strong>将虚拟环境添加到Jupyter</strong>内核</h2><ol>
+<li>在虚拟环境中运行以下命令，将虚拟环境添加到Jupyter内核列表中。<br>python -m ipykernel install –user –name&#x3D;myenv –display-name “Python (myenv)”</li>
+<li>其中，<code>myenv</code>是您的虚拟环境的名称。</li>
+</ol>
+<h2 id="启动Jupyter-Notebook"><a href="#启动Jupyter-Notebook" class="headerlink" title="启动Jupyter Notebook"></a><strong>启动Jupyter Notebook</strong></h2><p>现在您可以启动Jupyter Notebook，并在左上角的内核下拉菜单中找到您的虚拟环境。选择该内核以在虚拟环境中执行代码。</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2025-05-23T08:39:36+08:00"
-              content="2025-05-23">
-          05-23
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/05/23/jupyter%E4%B8%8Econda%E7%8E%AF%E5%A2%83/" itemprop="url">
-            <span itemprop="name">未命名</span>
-          </a>
-      </div>
+    <footer class="post-footer">
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/05/21/%E5%B7%B2%E7%BB%8F%E4%B8%8D%E7%9F%A5%E5%A4%A9%E5%9C%B0%E4%B8%BA%E4%BD%95%E7%89%A9%E4%BA%86/" rel="prev" title="已经不知道天地为何物了">
+                  <i class="fa fa-angle-left"></i> 已经不知道天地为何物了
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2025-05-21T21:10:39+08:00"
-              content="2025-05-21">
-          05-21
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/05/21/%E5%B7%B2%E7%BB%8F%E4%B8%8D%E7%9F%A5%E5%A4%A9%E5%9C%B0%E4%B8%BA%E4%BD%95%E7%89%A9%E4%BA%86/" itemprop="url">
-            <span itemprop="name">已经不知道天地为何物了</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2025-05-21T10:54:20+08:00"
-              content="2025-05-21">
-          05-21
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/05/21/one-hot%E5%90%8D%E5%AD%97%E7%94%B1%E6%9D%A5/" itemprop="url">
-            <span itemprop="name">one-hot名字由来</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2025-05-14T14:58:17+08:00"
-              content="2025-05-14">
-          05-14
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/05/14/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" itemprop="url">
-            <span itemprop="name">神经网络基础</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2025-05-14T13:13:15+08:00"
-              content="2025-05-14">
-          05-14
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/05/14/%E5%AE%9D%E5%85%B8%E9%9D%A2%E8%AF%95%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/" itemprop="url">
-            <span itemprop="name">面试宝典（持续更新)</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2025-05-14T13:13:15+08:00"
-              content="2025-05-14">
-          05-14
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/05/14/Pandas%E7%AC%94%E8%AE%B0/" itemprop="url">
-            <span itemprop="name">Pandas笔记</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2025-05-14T12:55:52+08:00"
-              content="2025-05-14">
-          05-14
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/05/14/hello-world/" itemprop="url">
-            <span itemprop="name">Hello World</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
+
+
+
 
 </div>
   </main>
