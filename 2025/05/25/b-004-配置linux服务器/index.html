@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="1、查看所有已配置的镜像源命令会递归搜索&#x2F;etc&#x2F;yum.repos.d&#x2F;目录下所有文件中的镜像源 URL： 1grep -rE &#x27;^(baseurl|mirrorlist)&#x3D;&#x27; &#x2F;etc&#x2F;yum.repos.d&#x2F;  从结果可以看出，系统中只有 CentOS-SCLo-scl-rh.repo 使用了这个镜像列表 URL，其他主要仓库（如 Base、EPEL）已正确配置为阿里云镜">
+<meta property="og:type" content="article">
+<meta property="og:title" content="试用3个月阿里云服务器">
+<meta property="og:url" content="http://example.com/2025/05/25/b-004-%E9%85%8D%E7%BD%AElinux%E6%9C%8D%E5%8A%A1%E5%99%A8/index.html">
+<meta property="og:site_name" content="李响，欢迎你回来">
+<meta property="og:description" content="1、查看所有已配置的镜像源命令会递归搜索&#x2F;etc&#x2F;yum.repos.d&#x2F;目录下所有文件中的镜像源 URL： 1grep -rE &#x27;^(baseurl|mirrorlist)&#x3D;&#x27; &#x2F;etc&#x2F;yum.repos.d&#x2F;  从结果可以看出，系统中只有 CentOS-SCLo-scl-rh.repo 使用了这个镜像列表 URL，其他主要仓库（如 Base、EPEL）已正确配置为阿里云镜">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-05-25T12:10:12.826Z">
+<meta property="article:modified_time" content="2025-05-28T06:46:23.192Z">
+<meta property="article:author" content="李响">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="云服务器">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2025/05/25/b-004-%E9%85%8D%E7%BD%AElinux%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2025/05/25/b-004-%E9%85%8D%E7%BD%AElinux%E6%9C%8D%E5%8A%A1%E5%99%A8/","path":"2025/05/25/b-004-配置linux服务器/","title":"试用3个月阿里云服务器"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>试用3个月阿里云服务器 | 李响，欢迎你回来</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">李响，欢迎你回来</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">本网站是我的个人博客，主要用于记录我个人学习的内容以及一些杂谈、心情记录、文摘等</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">9</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">9</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1%E3%80%81%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89%E5%B7%B2%E9%85%8D%E7%BD%AE%E7%9A%84%E9%95%9C%E5%83%8F%E6%BA%90"><span class="nav-number">1.</span> <span class="nav-text">1、查看所有已配置的镜像源</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2%E3%80%81%E5%BD%BB%E5%BA%95%E6%9B%BF%E6%8D%A2%E4%B8%BA%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F"><span class="nav-number">2.</span> <span class="nav-text">2、彻底替换为国内镜像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3%E3%80%81%E6%B8%85%E9%99%A4-yum-%E7%BC%93%E5%AD%98%E5%B9%B6%E9%87%8D%E6%96%B0%E7%94%9F%E6%88%90"><span class="nav-number">3.</span> <span class="nav-text">3、清除 yum 缓存并重新生成</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4%E3%80%81%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95"><span class="nav-number">4.</span> <span class="nav-text">4、查看当前目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5%E3%80%81%E5%AE%89%E8%A3%85Anaconda"><span class="nav-number">5.</span> <span class="nav-text">5、安装Anaconda</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6%E3%80%81%E6%A3%80%E6%9F%A5conda%E5%AE%89%E8%A3%85%E7%BB%93%E6%9E%9C"><span class="nav-number">6.</span> <span class="nav-text">6、检查conda安装结果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7%E3%80%81conda-%E6%8D%A2%E6%BA%90"><span class="nav-number">7.</span> <span class="nav-text">7、conda 换源</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8%E3%80%81conda-create-%E7%8E%AF%E5%A2%83"><span class="nav-number">8.</span> <span class="nav-text">8、conda create 环境</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">李响</p>
+  <div class="site-description" itemprop="description">愿你我都做生活的高手</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/05/25/b-004-%E9%85%8D%E7%BD%AElinux%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="李响">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="李响，欢迎你回来">
+      <meta itemprop="description" content="愿你我都做生活的高手">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="试用3个月阿里云服务器 | 李响，欢迎你回来">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          试用3个月阿里云服务器
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-05-25 20:10:12" itemprop="dateCreated datePublished" datetime="2025-05-25T20:10:12+08:00">2025-05-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-05-28 14:46:23" itemprop="dateModified" datetime="2025-05-28T14:46:23+08:00">2025-05-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9D%82%E6%8A%80/" itemprop="url" rel="index"><span itemprop="name">杂技</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="1、查看所有已配置的镜像源"><a href="#1、查看所有已配置的镜像源" class="headerlink" title="1、查看所有已配置的镜像源"></a>1、查看所有已配置的镜像源</h1><p>命令会递归搜索<code>/etc/yum.repos.d/</code>目录下所有文件中的镜像源 URL：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -rE &#x27;^(baseurl|mirrorlist)=&#x27; /etc/yum.repos.d/</span><br></pre></td></tr></table></figure>
+
+<p>从结果可以看出，系统中只有 <code>CentOS-SCLo-scl-rh.repo</code> 使用了这个镜像列表 URL，其他主要仓库（如 Base、EPEL）已正确配置为阿里云镜像。：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/etc/yum.repos.d/CentOS-SCLo-scl-rh.repo:mirrorlist=http://mirrorlist.centos.org?<span class="built_in">arch</span>=<span class="variable">$basearch</span>&amp;release=7&amp;repo=sclo-rh</span><br><span class="line">/etc/yum.repos.d/CentOS-SCLo-scl-rh.repo:baseurl=http://buildlogs.centos.org/centos/7/sclo/<span class="variable">$basearch</span>/rh/</span><br><span class="line">/etc/yum.repos.d/CentOS-SCLo-scl-rh.repo:baseurl=http://vault.centos.org/centos/7/sclo/Source/rh/</span><br><span class="line">/etc/yum.repos.d/CentOS-SCLo-scl-rh.repo:baseurl=http://debuginfo.centos.org/centos/7/sclo/<span class="variable">$basearch</span>/</span><br><span class="line">/etc/yum.repos.d/CentOS-Base.repo:baseurl=http://mirrors.cloud.aliyuncs.com/centos/<span class="variable">$releasever</span>/os/<span class="variable">$basearch</span>/</span><br><span class="line">/etc/yum.repos.d/CentOS-Base.repo:baseurl=http://mirrors.cloud.aliyuncs.com/centos/<span class="variable">$releasever</span>/updates/<span class="variable">$basearch</span>/</span><br><span class="line">/etc/yum.repos.d/CentOS-Base.repo:baseurl=http://mirrors.cloud.aliyuncs.com/centos/<span class="variable">$releasever</span>/extras/<span class="variable">$basearch</span>/</span><br><span class="line">/etc/yum.repos.d/epel.repo:baseurl=http://mirrors.cloud.aliyuncs.com/epel/7/<span class="variable">$basearch</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="2、彻底替换为国内镜像"><a href="#2、彻底替换为国内镜像" class="headerlink" title="2、彻底替换为国内镜像"></a>2、彻底替换为国内镜像</h1><p>第一个命令是注释掉<code>mirrorlist.centos.org</code>这个没用的地址</p>
+<p>第二个命令是添加<code>mirrors.aliyun.com</code>这个好用的地址</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> sed -i <span class="string">&#x27;s|mirrorlist=http://mirrorlist.centos.org|#mirrorlist=http://mirrorlist.centos.org|g&#x27;</span> /etc/yum.repos.d/CentOS-SCLo-scl-rh.repo</span><br><span class="line"><span class="built_in">sudo</span> sed -i <span class="string">&#x27;s|#baseurl=http://mirror.centos.org|baseurl=http://mirrors.aliyun.com|g&#x27;</span> /etc/yum.repos.d/CentOS-SCLo-scl-rh.repo</span><br></pre></td></tr></table></figure>
+
+<p>结果</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/etc/yum.repos.d/CentOS-SCLo-scl-rh.repo:baseurl=http://mirrors.aliyun.com/centos/7/sclo/$basearch/rh/</span><br><span class="line">/etc/yum.repos.d/CentOS-SCLo-scl-rh.repo:baseurl=http://buildlogs.centos.org/centos/7/sclo/$basearch/rh/</span><br><span class="line">/etc/yum.repos.d/CentOS-SCLo-scl-rh.repo:baseurl=http://vault.centos.org/centos/7/sclo/Source/rh/</span><br><span class="line">/etc/yum.repos.d/CentOS-SCLo-scl-rh.repo:baseurl=http://debuginfo.centos.org/centos/7/sclo/$basearch/</span><br><span class="line">/etc/yum.repos.d/CentOS-Base.repo:baseurl=http://mirrors.cloud.aliyuncs.com/centos/$releasever/os/$basearch/</span><br><span class="line">/etc/yum.repos.d/CentOS-Base.repo:baseurl=http://mirrors.cloud.aliyuncs.com/centos/$releasever/updates/$basearch/</span><br><span class="line">/etc/yum.repos.d/CentOS-Base.repo:baseurl=http://mirrors.cloud.aliyuncs.com/centos/$releasever/extras/$basearch/</span><br><span class="line">/etc/yum.repos.d/epel.repo:baseurl=http://mirrors.cloud.aliyuncs.com/epel/7/$basearch</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="3、清除-yum-缓存并重新生成"><a href="#3、清除-yum-缓存并重新生成" class="headerlink" title="3、清除 yum 缓存并重新生成"></a>3、<strong>清除 yum 缓存并重新生成</strong></h1><p>一通操作后，可以重新生成缓存了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> yum clean all</span><br><span class="line"><span class="built_in">sudo</span> yum makecache</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="4、查看当前目录"><a href="#4、查看当前目录" class="headerlink" title="4、查看当前目录"></a>4、查看当前目录</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@lx ~]# pwd </span><br><span class="line">/root</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="5、安装Anaconda"><a href="#5、安装Anaconda" class="headerlink" title="5、安装Anaconda"></a>5、安装Anaconda</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash Anaconda3-5.2.0-Linux-x86_64.sh -b -f -p /root/anaconda3</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>-b</code>：静默安装（不显示许可协议，自动接受）。</li>
+<li><code>-f</code>：强制覆盖已存在的文件。</li>
+<li><code>-p /root/anaconda3</code>：指定安装路径（若不指定，默认是<code>/root/anaconda3</code>）。</li>
+</ul>
+<h1 id="6、检查conda安装结果"><a href="#6、检查conda安装结果" class="headerlink" title="6、检查conda安装结果"></a>6、检查conda安装结果</h1><ol>
+<li><p><strong>检查环境变量</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$PATH</span> | grep anaconda3  <span class="comment"># 查看PATH是否包含anaconda3路径</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>若未包含，需手动添加：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;export PATH=&quot;/root/anaconda3/bin:$PATH&quot;&#x27;</span> &gt;&gt; ~/.bashrc</span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>验证 conda 命令</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda --version  <span class="comment"># 应显示conda版本（如conda 4.5.11）</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="7、conda-换源"><a href="#7、conda-换源" class="headerlink" title="7、conda 换源"></a>7、conda 换源</h1><p>换源：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --set show_channel_urls yes</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda config --show channels	</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="8、conda-create-环境"><a href="#8、conda-create-环境" class="headerlink" title="8、conda create 环境"></a>8、conda create 环境</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装</span></span><br><span class="line">conda create -n jupyter_test python=3.9</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">使用</span></span><br><span class="line">source activate jupyter_test</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter lab --allow-root</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/linux/" rel="tag"># linux</a>
+              <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag"># 云服务器</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/05/23/b-003-jupyter%E5%90%AF%E5%8A%A8%E6%96%B9%E5%BC%8F%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E9%A1%B9/" rel="prev" title="jupyter配置文件">
+                  <i class="fa fa-angle-left"></i> jupyter配置文件
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">李响</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
