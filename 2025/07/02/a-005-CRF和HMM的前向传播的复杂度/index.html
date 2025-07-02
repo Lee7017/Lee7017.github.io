@@ -19,27 +19,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="Pandasapply() 是 DataFrame 和 Series 的核心方法，用于沿轴应用函数，遍历元素result &#x3D; df.apply(sum, axis&#x3D;0) dataframe合并，concat，merge    对比项 pd.concat() pd.merge()    合并依据 按索引或轴（axis）直接拼接 按指定列或索引的共同值进行连接   数据结构 支持">
+    <meta name="description" content="隐马尔可夫 HMM 三大问题 恒定条件：模型为 λ &#x3D; (A,B,π)，观测序列 O &#x3D; {o1, o2, … oT} tip1：我们把状态序列，形象地理解为路径！想象一个栅栏形状的图！ tip2：在观测序列给定的情况下，当求解到了某一步的状态时，其实此时的发射分数已经被动确定好，不能动了！   评估问题（EvaluationProblem）：给定模型 (π, A, B) 及观">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Pandas笔记">
-<meta property="og:url" content="http://example.com/2025/05/14/a-002-Pandas%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:title" content="隐马尔可夫 HMM 三大问题">
+<meta property="og:url" content="http://example.com/2025/07/02/a-005-CRF%E5%92%8CHMM%E7%9A%84%E5%89%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%9A%84%E5%A4%8D%E6%9D%82%E5%BA%A6/index.html">
 <meta property="og:site_name" content="李响，欢迎你回来">
-<meta property="og:description" content="Pandasapply() 是 DataFrame 和 Series 的核心方法，用于沿轴应用函数，遍历元素result &#x3D; df.apply(sum, axis&#x3D;0) dataframe合并，concat，merge    对比项 pd.concat() pd.merge()    合并依据 按索引或轴（axis）直接拼接 按指定列或索引的共同值进行连接   数据结构 支持">
+<meta property="og:description" content="隐马尔可夫 HMM 三大问题 恒定条件：模型为 λ &#x3D; (A,B,π)，观测序列 O &#x3D; {o1, o2, … oT} tip1：我们把状态序列，形象地理解为路径！想象一个栅栏形状的图！ tip2：在观测序列给定的情况下，当求解到了某一步的状态时，其实此时的发射分数已经被动确定好，不能动了！   评估问题（EvaluationProblem）：给定模型 (π, A, B) 及观">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-05-14T05:13:15.780Z">
-<meta property="article:modified_time" content="2025-05-13T14:05:43.798Z">
+<meta property="og:image" content="http://example.com/images/DeepLearn/%E5%89%8D%E5%90%91%E7%AE%97%E6%B3%95%E7%8A%B6%E6%80%81%E5%9B%BE.png">
+<meta property="article:published_time" content="2025-07-02T09:58:03.620Z">
+<meta property="article:modified_time" content="2025-07-02T10:00:53.974Z">
 <meta property="article:author" content="李响">
-<meta property="article:tag" content="Pandas笔记">
+<meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/DeepLearn/%E5%89%8D%E5%90%91%E7%AE%97%E6%B3%95%E7%8A%B6%E6%80%81%E5%9B%BE.png">
 
 
-<link rel="canonical" href="http://example.com/2025/05/14/a-002-Pandas%E7%AC%94%E8%AE%B0/">
+<link rel="canonical" href="http://example.com/2025/07/02/a-005-CRF%E5%92%8CHMM%E7%9A%84%E5%89%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%9A%84%E5%A4%8D%E6%9D%82%E5%BA%A6/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2025/05/14/a-002-Pandas%E7%AC%94%E8%AE%B0/","path":"2025/05/14/a-002-Pandas笔记/","title":"Pandas笔记"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2025/07/02/a-005-CRF%E5%92%8CHMM%E7%9A%84%E5%89%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%9A%84%E5%A4%8D%E6%9D%82%E5%BA%A6/","path":"2025/07/02/a-005-CRF和HMM的前向传播的复杂度/","title":"隐马尔可夫 HMM 三大问题"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Pandas笔记 | 李响，欢迎你回来</title>
+<title>隐马尔可夫 HMM 三大问题 | 李响，欢迎你回来</title>
   
 
 
@@ -129,7 +131,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Pandas"><span class="nav-number">1.</span> <span class="nav-text">Pandas</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%8F%E8%A7%86%E8%A1%A8%EF%BC%9Apandas%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1"><span class="nav-number">2.</span> <span class="nav-text">透视表：pandas数据统计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#matplotlib"><span class="nav-number">3.</span> <span class="nav-text">matplotlib</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9A%90%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB-HMM-%E4%B8%89%E5%A4%A7%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">隐马尔可夫 HMM 三大问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1%E3%80%81%E5%89%8D%E5%90%91%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E6%89%80%E6%9C%89%E8%B7%AF%E5%BE%84%E6%88%90%E6%9C%AC%E6%80%BB%E5%92%8C"><span class="nav-number">2.</span> <span class="nav-text">1、前向算法——所有路径成本总和</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1%E3%80%81%E5%89%8D%E5%90%91%E7%AE%97%E6%B3%95%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-number">3.</span> <span class="nav-text">1、前向算法时间复杂度:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2%E3%80%81%E7%BB%B4%E7%89%B9%E6%AF%94%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E6%88%90%E6%9C%AC%E6%9C%80%E5%B0%8F%E7%9A%84%E6%9C%80%E4%BC%98%E8%B7%AF%E5%BE%84"><span class="nav-number">4.</span> <span class="nav-text">2、维特比算法——成本最小的最优路径</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -184,7 +186,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/05/14/a-002-Pandas%E7%AC%94%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/07/02/a-005-CRF%E5%92%8CHMM%E7%9A%84%E5%89%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%9A%84%E5%A4%8D%E6%9D%82%E5%BA%A6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -197,12 +199,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Pandas笔记 | 李响，欢迎你回来">
+      <meta itemprop="name" content="隐马尔可夫 HMM 三大问题 | 李响，欢迎你回来">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Pandas笔记
+          隐马尔可夫 HMM 三大问题
         </h1>
 
         <div class="post-meta-container">
@@ -212,15 +214,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2025-05-14 13:13:15" itemprop="dateCreated datePublished" datetime="2025-05-14T13:13:15+08:00">2025-05-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-05-13 22:05:43" itemprop="dateModified" datetime="2025-05-13T22:05:43+08:00">2025-05-13</time>
+      <time title="创建时间：2025-07-02 17:58:03 / 修改时间：18:00:53" itemprop="dateCreated datePublished" datetime="2025-07-02T17:58:03+08:00">2025-07-02</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -241,63 +237,30 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="Pandas"><a href="#Pandas" class="headerlink" title="Pandas"></a>Pandas</h1><p>apply() 是 DataFrame 和 Series 的核心方法，用于沿轴应用函数，遍历元素<br>result &#x3D; df.apply(sum, axis&#x3D;0)</p>
-<p>dataframe合并，concat，merge</p>
-<table>
-<thead>
-<tr>
-<th><strong>对比项</strong></th>
-<th><strong>pd.concat()</strong></th>
-<th><strong>pd.merge()</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>合并依据</strong></td>
-<td>按索引或轴（axis）直接拼接</td>
-<td>按指定列或索引的共同值进行连接</td>
-</tr>
-<tr>
-<td><strong>数据结构</strong></td>
-<td>支持 Series 和 DataFrame</td>
-<td>主要用于 DataFrame</td>
-</tr>
-<tr>
-<td><strong>连接方式</strong></td>
-<td>支持 <code>axis=0</code>（纵向）或 <code>axis=1</code>（横向）</td>
-<td>支持 <code>how=&#39;inner&#39;</code>（内连接）、<code>&#39;outer&#39;</code>（外连接）、<code>&#39;left&#39;</code>（左连接）、<code>&#39;right&#39;</code>（右连接）</td>
-</tr>
-<tr>
-<td><strong>重复列处理</strong></td>
-<td>保留所有列（可能出现重复列名）</td>
-<td>自动处理重复列（通过 <code>suffixes</code> 参数）</td>
-</tr>
-<tr>
-<td><strong>典型场景</strong></td>
-<td>合并结构相同的数据（如多个表格）</td>
-<td>基于共同字段关联不同数据源（如 SQL JOIN）</td>
-</tr>
-</tbody></table>
-<p>dataframe去重，# 实施去重操作   drop_duplicates()</p>
-<p>填充空值		fillna</p>
-<h1 id="透视表：pandas数据统计"><a href="#透视表：pandas数据统计" class="headerlink" title="透视表：pandas数据统计"></a>透视表：pandas数据统计</h1><ul>
-<li><p>交叉表（了解）：</p>
-<p>交叉表用于计算一列数据对于另外一列数据的分组个数(用于统计分组频率的特殊透视表)</p>
-<ul>
-<li>pd.crosstab(value1, value2)</li>
-</ul>
+    <div class="post-body" itemprop="articleBody"><h1 id="隐马尔可夫-HMM-三大问题"><a href="#隐马尔可夫-HMM-三大问题" class="headerlink" title="隐马尔可夫 HMM 三大问题"></a>隐马尔可夫 HMM 三大问题</h1><blockquote>
+<p><strong>恒定条件：模型为 λ &#x3D; (A,B,π)，观测序列 O &#x3D; {o<del>1</del>, o<del>2</del>, … o<del>T</del>}</strong></p>
+<p>tip1：我们把状态序列，形象地理解为路径！想象一个栅栏形状的图！</p>
+<p>tip2：在观测序列给定的情况下，当求解到了某一步的状态时，其实此时的发射分数已经被动确定好，不能动了！</p>
+</blockquote>
+<ol>
+<li><p>评估问题（EvaluationProblem）：给定模型 (π, A, B) 及观测序列 O &#x3D; {o<del>1</del>, o<del>2</del>, … o<del>T</del>}，计算其出现的概率 P (O|λ)</p>
 </li>
-<li><p>透视表（掌握）：</p>
-<p>透视表是将原有的DataFrame的列分别作为行索引和列索引，然后对指定的列应用聚集函数</p>
-<ul>
-<li>data.pivot_table(）</li>
-<li>DataFrame.pivot_table([], index&#x3D;[])</li>
-</ul>
+<li><p>解码问题（DecodingProblem）：已知模型 (π, A, B) 和观测序列 O &#x3D; {o<del>1</del>, o<del>2</del>, … o<del>T</del>} ，求状态序列，使得 P (I|O, λ) 最大</p>
 </li>
+<li><p>学习问题（LearningProblem）：给定观测序列 O &#x3D; {o<del>1</del>, o<del>2</del>, … o<del>T</del>} ，求解参数 (π, A, B) 使得 P (O|λ) 最大</p>
+</li>
+</ol>
+<p>$$<br>y&#x3D;x<br>$$</p>
+<h1 id="1、前向算法——所有路径成本总和"><a href="#1、前向算法——所有路径成本总和" class="headerlink" title="1、前向算法——所有路径成本总和"></a>1、前向算法——所有路径成本总和</h1><p>两个时间步的状态之间有一组概率（分数），我们叫做状态转移概率（状态转移分数）</p>
+<p>每一个状态&#x3D;&#x3D;锁定&#x3D;&#x3D;着一个概率（分数），我们叫做发射概率（发射分数）</p>
+<p><img src="/../images/DeepLearn/%E5%89%8D%E5%90%91%E7%AE%97%E6%B3%95%E7%8A%B6%E6%80%81%E5%9B%BE.png" alt="前向算法"></p>
+<h1 id="1、前向算法时间复杂度"><a href="#1、前向算法时间复杂度" class="headerlink" title="1、前向算法时间复杂度:"></a>1、前向算法时间复杂度:</h1><p>假设：状态数为  N ，观测序列长度为  T 。</p>
+<ul>
+<li>暴力枚举法：枚举所有  N^T^  条状态路径，每条路径计算概率需  O(T)  时间，总时间复杂度为  O(N^T^ · T) </li>
+<li>前向算法：总时间复杂度为  O(N^2^ · T) ，从指数级降至多项式级。</li>
 </ul>
-<p>在 Pandas 中，<code>pivot()</code> 和 <code>pivot_table()</code> 都用于将长格式数据转换为宽格式（透视表），但它们的功能和适用场景有明显区别：</p>
-<h1 id="matplotlib"><a href="#matplotlib" class="headerlink" title="matplotlib"></a>matplotlib</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">6</span>))</span><br><span class="line">n, bins, patches = plt.hist(data, bins=<span class="number">20</span>, color=<span class="string">&#x27;lightgreen&#x27;</span>, edgecolor=<span class="string">&#x27;black&#x27;</span>, alpha=<span class="number">0.7</span>)</span><br><span class="line">    </span><br><span class="line">    plt.title(<span class="string">&#x27;身高分布直方图&#x27;</span>, fontsize=<span class="number">16</span>)</span><br><span class="line">    plt.xlabel(<span class="string">&#x27;身高 (cm)&#x27;</span>, fontsize=<span class="number">14</span>)</span><br><span class="line">    plt.ylabel(<span class="string">&#x27;频率&#x27;</span>, fontsize=<span class="number">14</span>)</span><br><span class="line">    plt.grid(axis=<span class="string">&#x27;y&#x27;</span>, linestyle=<span class="string">&#x27;--&#x27;</span>, alpha=<span class="number">0.7</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 添加均值线</span></span><br><span class="line">    plt.axvline(data.mean(), color=<span class="string">&#x27;r&#x27;</span>, linestyle=<span class="string">&#x27;dashed&#x27;</span>, linewidth=<span class="number">2</span>, label=<span class="string">f&#x27;均值: <span class="subst">&#123;data.mean():<span class="number">.2</span>f&#125;</span>&#x27;</span>)</span><br><span class="line">    plt.legend()</span><br><span class="line"></span><br><span class="line">    plt.tight_layout()</span><br><span class="line">    plt.savefig(<span class="string">&#x27;histogram.png&#x27;</span>)</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
-
-
+<p>总结：前向算法通过&#x3D;&#x3D;动态规划&#x3D;&#x3D;将HMM观测序列概率的计算复杂度优化</p>
+<h1 id="2、维特比算法——成本最小的最优路径"><a href="#2、维特比算法——成本最小的最优路径" class="headerlink" title="2、维特比算法——成本最小的最优路径"></a>2、维特比算法——成本最小的最优路径</h1>
     </div>
 
     
@@ -306,21 +269,18 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Pandas%E7%AC%94%E8%AE%B0/" rel="tag"># Pandas笔记</a>
+              <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag"># 深度学习</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2025/05/14/a-000-hello-world/" rel="prev" title="Hello World">
-                  <i class="fa fa-angle-left"></i> Hello World
+                <a href="/2025/05/25/b-004-%E9%85%8D%E7%BD%AElinux%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="prev" title="试用3个月阿里云服务器">
+                  <i class="fa fa-angle-left"></i> 试用3个月阿里云服务器
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2025/05/14/a-003-%E5%AE%9D%E5%85%B8%E9%9D%A2%E8%AF%95%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/" rel="next" title="面试宝典（持续更新)">
-                  面试宝典（持续更新) <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
