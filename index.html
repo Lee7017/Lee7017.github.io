@@ -216,7 +216,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-03 11:01:22" itemprop="dateModified" datetime="2025-07-03T11:01:22+08:00">2025-07-03</time>
+      <time title="修改时间：2025-07-03 11:26:23" itemprop="dateModified" datetime="2025-07-03T11:26:23+08:00">2025-07-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -245,6 +245,12 @@
             tex2jax: {
             skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
             inlineMath: [['$','$']]
+            },
+            preProcess: function (element) {
+                // 转换 ^文本^ 为 ^{\文本}（上标）
+                element.innerHTML = element.innerHTML.replace(/\^([^^]+)\^/g, '^{$1}');
+                // 转换 ~文本~ 为 _{文本}（下标）
+                element.innerHTML = element.innerHTML.replace(/~([^~]+)~/g, '_{$1}');
             }
         });
     </script>
